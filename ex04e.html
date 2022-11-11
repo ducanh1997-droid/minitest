@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 4: phần e</title>
+</head>
+<body>
+<label for="a">Nhập a:</label>
+<input type="text" id="a">
+<label for="b">Nhập b:</label>
+<input type="text" id="b">
+<label for="c">Nhập c:</label>
+<input type="text" id="c">
+<button onclick="calculate()" id="submit">Kiểm tra</button>
+
+<p id="triangle"></p>
+<p id="isoscelesTriangle"></p>
+<p id="equilateralTriangle"></p>
+<p id="square"></p>
+</body>
+<script>
+    let triangle = document.getElementById("triangle");
+    let isoscelesTriangle = document.getElementById("isoscelesTriangle");
+    let equilateralTriangle = document.getElementById("equilateralTriangle");
+    let square = document.getElementById("square");
+    function calculate(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        if(a+b>c && a+c>b && b+c>a){
+            triangle.innerHTML = "a b c là 3 cạnh của tam giác";
+            if((a==b) || (a==c) || (b==c)){
+                isoscelesTriangle.innerHTML = "Là tam giác cân";
+                if(a==b && b==c){
+                    equilateralTriangle.innerHTML = "Là tam giác đều";
+                }else{
+                    equilateralTriangle.innerHTML = "Không phải tam giác đều";
+                }
+            }else{
+                isoscelesTriangle.innerHTML = "Không phải tam giác cân";
+            }
+
+            if((a*a) == (b*b)+(c*c) || (b*b) == (a*a)+(c*c) || (c*c) == (b*b)+(a*a)){
+                square.innerHTML = "Là tam giác vuông";
+            }else{
+                square.innerHTML = "không phải tam giác vuông";
+            }
+        }else {
+            triangle.innerHTML = "a b c không là 3 cạnh của tam giác";
+        }
+
+    }
+</script>
+</html>

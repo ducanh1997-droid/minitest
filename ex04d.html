@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bài 4: phần d</title>
+</head>
+<body>
+<label for="a">Nhập a:</label>
+<input type="text" id="a">
+<button onclick="calculate()" id="submit">Tính thế kỉ</button>
+
+<p id="century"></p>
+</body>
+<script>
+  let century = document.getElementById("century");
+
+  function calculate(){
+    let a = document.getElementById("a").value;
+    century.innerHTML = "Thế kỉ: " + Math.floor(a/100 +1);
+  }
+</script>
+</html>

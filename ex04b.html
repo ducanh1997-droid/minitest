@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 4: phần b</title>
+</head>
+<body>
+<label for="a">Nhập a:</label>
+    <input type="text" id="a">
+<label for="b">Nhập b:</label>
+    <input type="text" id="b">
+<button onclick="calculate()" id="submit">Phép tính</button>
+
+<p id="calculate1"></p>
+<p id="calculate2"></p>
+</body>
+<script>
+    let calculate1 = document.getElementById("calculate1");
+    let calculate2 = document.getElementById("calculate2");
+    function calculate(){
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        calculate1.innerHTML = "a^2 = " + (a*a);
+        calculate2.innerHTML = "a^b = " + (a**b);
+    }
+</script>
+</html>

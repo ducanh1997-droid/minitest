@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 4: phần c</title>
+</head>
+<body>
+<label for="a">Nhập a:</label>
+<input type="text" id="a">
+<label for="b">Nhập b:</label>
+<input type="text" id="b">
+<button onclick="Sum()" id="submit">Phép tính</button>
+
+
+<p id="sum"></p>
+</body>
+<script>
+    let sum = document.getElementById("sum");
+    function Sum(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        if(b>=a){
+            sum.innerHTML = "Tổng dãy số là: "+ (b+a)*(b-a+1)/2;
+        }else{
+            sum.innerHTML = "Nhập lại số b lớn hơn a";
+        }
+
+
+    }
+</script>
+</html>
